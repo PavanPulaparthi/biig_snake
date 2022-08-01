@@ -1,9 +1,6 @@
-from http.client import PAYMENT_REQUIRED
-from re import I
-
-
 class Item:
     pay_rate = 0.8 # The pay rate after 20% discount
+    all = [] 
 
     def __init__(self, name: str, price: float, quantity=0):
         # Run validations to the received arguments
@@ -23,7 +20,6 @@ class Item:
 
 item1 = Item("Phone", 100, 1)
 item1.apply_discount()
-
 print(f"The total price of {item1.name} is {item1.calculate_total_price()}")
 
 item2 = Item("Laptop", 1000, 1)
@@ -31,7 +27,10 @@ item2.pay_rate = 0.7
 item2.apply_discount()
 print(f"The total price of {item2.name} is {item2.calculate_total_price()}")
 
-#item2.has_numpad = False
+item3 = Item("Cable", 10, 1)
+item4 = Item("Mouse", 50, 5)
+item5 = Item("Keyboard", 75, 5)
 
+#item2.has_numpad = False
 # print(Item.__dict__)    # All the attributes for Class level
-# print(item1.__dict__)   # All the attributes for instance level
+# print(item1.__dict__)   # All the attributes for instance level0
